@@ -1,3 +1,3 @@
-download npm \n
-in terminal write "node app.js" \n
+download npm <br>
+in terminal write "node app.js" <br>
 open google and write "localhost:8080"

@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerplate") %>
+    <h3>Workout</h3>
+    <ul>
+        <li><%=workout.exercise%></li>
+        <li><%=workout.weight%> kg</li>
+        <li><%=workout.reps%> reps</li>
+        <li><%=workout.date%></li>
+    </ul>
+    <br>
+    <a href="/workouts/<%=workout._id  %>/edit">edit listing</a>
+    <br>
+    <br>
+    <form method="post" action="/workouts/<%=workout._id %>?_method=DELETE" >
+        <button>delete post</button>
+    </form>

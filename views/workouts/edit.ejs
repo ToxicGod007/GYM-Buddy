@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+
+<h3>Edit your post</h3>
+<form method="POST" action="/workouts/<%= workout._id %>?_method=PUT">
+  <label>Exercise</label>
+  <input name="workout[exercise]" value="<%= workout.exercise %>" type="text">
+  <br><br>
+
+  <label>Weight (kg)</label>
+  <input name="workout[weight]" value="<%= workout.weight %>" type="number">
+  <br><br>
+
+  <label>Reps</label>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <button type="button" onclick="decreaseReps()">-</button>
+    <input id="repsInput" name="workout[reps]" value="<%= workout.reps %>" type="number" min="0" readonly>
+    <button type="button" onclick="increaseReps()">+</button>
+  </div>
+  <br><br>
+
+  <label>Date</label>
+  <input name="workout[date]" value="<%= workout.date %>" type="date">
+  <br><br>
+
+  <button type="submit">Edit</button>
+</form>
+
+<script>
+  const repsInput = document.getElementById("repsInput");
+
+  function increaseReps() {
+    repsInput.value = parseInt(repsInput.value || 0) + 1;
+  }
+
+  function decreaseReps() {
+    let current = parseInt(repsInput.value || 0);
+    if (current > 0) {
+      repsInput.value = current - 1;
+    }
+  }
+</script>

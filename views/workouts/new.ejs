@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate") %>
+    <h3>Add new workout</h3>
+    <form method="post" action="/workouts">
+        <input name="workout[exercise]" placeholder="enter workout" type="text">
+        <br>
+        <br>
+        <input name="workout[weight]" placeholder="enter weight" type="number">
+        <br>
+        <br>
+        <input name="workout[reps]" placeholder="enter reps" type="number">
+        <br>
+        <br>
+        <input name="workout[date]" placeholder="enter time" type="date">
+        <br>
+        <br>
+
+        <button>add</button>
+    </form>

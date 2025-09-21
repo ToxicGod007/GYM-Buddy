@@ -1,0 +1,12 @@
+<% layout("/layouts/boilerplate") %>
+
+    <h3>All Workouts</h3>
+    <ul>
+        <% for(workout of allWorkouts){%>
+        <li><a href="/workouts/<%= workout._id %>"><%= workout.exercise%></a></li>
+<%  }%>
+    </ul>
+    
+    
+
+
